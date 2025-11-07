@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IhznsqM-_0avc2Yqq33lrA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="685cd5df-7561-44ea-9a27-5698fef679f1" CvElementArea="299, 393, 273, 35" CvType="InputBox" DesignTimeRectangle="547, 398, 23, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;wnd ctrlname='panel2' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='comboBox1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;ctrl name='State :' role='combo box' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Open' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Open' /&gt;" Guid="919bfb5c-4756-4776-8e4a-a3e9aaa4819f" ScopeSelectorArgument="&lt;wnd app='sampledesktopapp.exe' ctrlname='Form1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="685cd5df-7561-44ea-9a27-5698fef679f1" CvTextArea="179, 400, 47, 18" CvTextArgument="State :" CvType="Text" DesignTimeRectangle="177, 401, 57, 20" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='panel2' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label7' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='State :' /&gt;" Guid="595f4974-258f-41fd-8177-0d83340ca3cd" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="51f7a3def303dafef655db399a91c6f6.png" xmlns="">0_oLrSQ9yHUyL5PKYbWk9dQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,6 @@
+{
+  "Name": "DataCapturing Bot",
+  "ProjectType": "Process",
+  "Description": "",
+  "MainFile": "Main.xaml"
+}

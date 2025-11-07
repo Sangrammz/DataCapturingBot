@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome CRM",
+  "Type": "Screen",
+  "Id": "zFCDl81XpEGP1GGbHYPJBA",
+  "Reference": "1PP5C-LuzU-iwU2I9Edkyw/zFCDl81XpEGP1GGbHYPJBA",
+  "ParentRef": "1PP5C-LuzU-iwU2I9Edkyw/zxqeHvCe0UapuVP3MX-GUQ",
+  "Created": "2025-11-07T07:03:29.6508153Z",
+  "Updated": "2025-11-07T07:03:29.6508153Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
