@@ -1,91 +1,132 @@
-How To Create
-===========
+Data Capturing Bot – UiPath Automation Project
+
+This project automates data entry from Excel into both Web and Desktop applications using UiPath Studio.
+It demonstrates reading data, filling forms, handling dropdowns & radio buttons, and running multiple workflows in parallel.
+
+Project Overview
+---------------------------------
 
 
-Step 1: Create the Project
+Name: DataCapturingBot
 
-Open UiPath Studio.
+Tools: UiPath Studio, Excel, Web/Windows Forms
 
-Click Process → Blank Process.
+Workflows:
 
-Name it DataCapturingBot → Choose location → Click Create.
+WebDataCapturingBot.xaml
 
-Step 2: Add a New Workflow
+DesktopDataCapturingBot.xaml
 
-In the Project panel, right-click the project → Add → New Sequence.
+Main.xaml (runs both in parallel)
 
-Name it WebDataCapturingBot.xaml.
 
-Open it — this will be your main automation workflow.
+How to Create & Run the Bot
+----------------------------------------------------------------
 
-Step 3: Read Data from Excel
+1️⃣ Create the Project
 
-Search for Read Range activity (Excel or Workbook version depending on if Excel App is installed).
+Open UiPath Studio → New Process → Blank Process → Name it DataCapturingBot.
 
-Specify the file path of your Excel sheet (where data is stored).
+2️⃣ WebDataCapturingBot.xaml
 
-In the Output property, create a variable (e.g. dtInputData of type DataTable).
+Purpose: Automates data entry on a website.
+Steps:
 
-This stores all your Excel rows & columns for looping.
+Add a new Sequence → name it WebDataCapturingBot.xaml.
 
-Step 4: Open Web Application
+Use Read Range to load Excel data → store in dtInputData.
 
-Use Use Application/Browser activity.
+Add Use Application/Browser → open target webpage (e.g., form URL).
 
-Enter or paste the URL of the webpage where you want to enter data.
+Add For Each Row in DataTable → use dtInputData.
 
-Example: https://example.com/form
+Use Type Into to enter text fields (row("Name").ToString, etc.).
 
-Step 5: Loop Through Data Rows
+Use If for gender radio buttons → click Male or Female.
 
-Drag a For Each Row in DataTable activity below the browser activity.
+Use Select Item for dropdowns (row("City").ToString).
 
-Select dtInputData as the DataTable.
+Click Submit → add small delay if page reloads.
 
-This lets you access each cell’s value with row("ColumnName").ToString.
+Debug & Run → data should fill automatically.
 
-Step 6: Type Data into Web Form
+3️⃣ DesktopDataCapturingBot.xaml
 
-Inside the For Each Row loop:
+Purpose: Automates data entry on a desktop application.
+Steps:
 
-Use Type Into activities for text fields.
-Example:
+Add another Sequence → name it DesktopDataCapturingBot.xaml.
 
-For Name field → row("Name").ToString
+Use Read Range to load Excel → store in dtDesktopData.
 
-For Email field → row("Email").ToString
+Use Use Application/Browser → indicate desktop window.
 
-Make sure to indicate each field on screen using indicate on screen option.
+Add For Each Row in DataTable → use dtDesktopData.
 
-Step 7: Handle Radio Buttons (Gender)
+Use Type Into for form fields (row("FullName").ToString, etc.).
 
-Use an If activity:
+Use If for gender radio buttons.
 
-Condition: row("Gender").ToString.ToLower = "male"
+Use Select Item for dropdowns (row("Department").ToString).
 
-In Then → use Click activity to click the Male radio button.
+Click Submit → optional delay for app response.
 
-In Else → use Click activity to click the Female radio button.
+Debug & Run → confirm data entries are correct.
 
-Step 8: Handle Drop-down Selection
+4️⃣ Main.xaml – Run Workflows in Parallel
 
-Use the Select Item activity.
+Purpose: Execute both bots together.
+Steps:
 
-Indicate the drop-down element on the screen.
+Open Main.xaml.
 
-Pass value from DataTable like:
-row("City").ToString
+Drag a Parallel activity to the canvas.
 
-Step 9: Submit the Form
+In each branch, use Invoke Workflow File:
 
-Use a Click activity on the Submit button.
+Branch 1 → WebDataCapturingBot.xaml
 
-Add a Delay (1–2 seconds) after it if the page refreshes.
+Branch 2 → DesktopDataCapturingBot.xaml
 
-Step 10: Debug and Run
+Debug or Run → both workflows execute simultaneously.
 
-Click Debug File or Run File.
+5️⃣ Connect Project to GitHub
 
-Watch UiPath fill in each row of data automatically!
+Purpose: Version control & collaboration.
+Steps:
 
-Check for any selector errors or delays — adjust accordingly.
+Create a new GitHub repo → copy repo URL.
+
+In UiPath Studio → Home → Team → GIT → Init Repository.
+
+Manage Remotes → Add → paste GitHub repo URL.
+
+Commit and Push → upload project files.
+
+Verify on GitHub — all .xaml files should appear.
+
+✅ Final Structure
+DataCapturingBot/
+├── Main.xaml
+├── WebDataCapturingBot.xaml
+├── DesktopDataCapturingBot.xaml
+├── project.json
+└── .gitignore
+
+🧩 Key Features
+
+Reads data from Excel and fills both web & desktop forms.
+
+Handles text, dropdowns, and radio buttons.
+
+Executes multiple workflows in parallel.
+
+Integrated with GitHub for version control.
+
+▶️ Run the Bot
+
+Open DataCapturingBot in UiPath Studio.
+
+Run Main.xaml → both workflows execute concurrently.
+
+Monitor browser and desktop forms — data is captured automatically.
